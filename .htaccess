@@ -1,5 +1,5 @@
 #Alternate default index page
-DirectoryIndex first.html
+DirectoryIndex kalmix.html
 
 RewriteEngine On
 
