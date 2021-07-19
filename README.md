@@ -14,5 +14,5 @@
 
 ![](https://i.imgur.com/TnQOhu7.png)
 
-> **More info in:**
+> **More info at:**
 https://getbootstrap.com/
