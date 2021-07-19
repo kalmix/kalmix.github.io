@@ -1,3 +1,8 @@
+<p align="center">
+  <a href="https://kalmix.github.io/">
+    <img src="https://i.imgur.com/Fwl4LEd.png" alt="Logo" width=72 height=72>
+  </a>
+
 # Kalmix GitHub Page
 
 ![](https://i.imgur.com/tj8VSCK.png)
