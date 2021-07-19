@@ -12,7 +12,7 @@
 
 
 
-![](https://i.imgur.com/ncUqxvH.jpg)
+![](https://i.imgur.com/TnQOhu7.png)
 
 > **More info in:**
 https://getbootstrap.com/
