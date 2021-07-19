@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://kalmix.github.io/">
-    <img src="https://i.imgur.com/Fwl4LEd.png" alt="Logo" width=72 height=72>
+    <img src="https://i.imgur.com/Fwl4LEd.png" alt="Logo" width=100 height=100>
   </a>
 
 # Kalmix GitHub Page
