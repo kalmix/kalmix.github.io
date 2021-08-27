@@ -1,5 +1,3 @@
-#Alternate default index page
-DirectoryIndex kalmix.html
 
 RewriteEngine on
 
