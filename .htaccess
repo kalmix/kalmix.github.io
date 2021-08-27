@@ -9,4 +9,9 @@ RewriteRule ^(.+)$ $1.html [L,QSA]
 RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /.*\.html\ HTTP/
 RewriteRule ^(.*)\.html$ /$1 [R=301,L]
 
+
+RewriteEngine On
+RewriteCond %{HTTP_HOST} !^kalmix.github\.io$ [NC]
+RewriteRule ^(.*)$ https://kalmix.github.io/$1 [R=301,L]
+
 ErrorDocument 404 /404.html
