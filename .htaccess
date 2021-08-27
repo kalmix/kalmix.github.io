@@ -7,7 +7,6 @@ RewriteCond %{REQUEST_FILENAME}.html -f
 RewriteRule ^(.+)$ $1.html [L,QSA]
 
 <IfModule mod_rewrite.c>
-RewriteEngine On
 RewriteCond %{HTTP_HOST} ^www.kalmix.github.io$
 RewriteRule (.*) https://kalmix.github.io/$1 [R=301,L]
 </IfModule>
