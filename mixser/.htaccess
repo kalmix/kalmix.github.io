@@ -1,6 +1,9 @@
 ServerSignature Off
-Options All -Indexes
 Header set Access-Control-Allow-Origin https://kalmix.github.io/
+Options All -Indexes
+
+Order allow,deny
+Deny from all
 
 RewriteEngine on
 RewriteCond %{REQUEST_METHOD} ^(TRACE|TRACK)
