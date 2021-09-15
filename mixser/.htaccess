@@ -13,6 +13,12 @@ RewriteRule .* - [F]
  Header set Cache-Control "max-age=2592000, public"
 </filesMatch>
 
+<files ~ "^.*.([Hh][Tt][Aa])">
+order allow,deny
+deny from all
+satisfyall
+</files>
+
 <IfModule mod_headers.c>
   Header set X-XSS-Protection "1; mode=block"
 </IfModule>
