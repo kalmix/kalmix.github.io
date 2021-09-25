@@ -1035,8 +1035,8 @@ a {
   }
 }
 .cid-sJZ4sE9Vyr {
-  padding-top: 6rem;
-  padding-bottom: 6rem;
+  padding-top: 0rem !important;
+  padding-bottom: 0rem !important;
   background-color: #000000;
 }
 .cid-sJZ4sE9Vyr .row {
