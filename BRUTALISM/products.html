@@ -31,7 +31,43 @@
   
 </head>
 <body>
-  
+     <style>
+    body {
+      animation: fadeInAnimation ease 2s;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
+      overflow: overlay;
+    }
+
+    @keyframes fadeInAnimation {
+      0% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+    ::-webkit-scrollbar {
+      width: 20px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background-color: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background-color: #d3d3d3;
+      border-radius: 20px;
+      border: 6px solid transparent;
+      background-clip: content-box;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background-color: #a8bbbf;
+    }
+  </style>
   <section data-bs-version="5.1" class="menu menu2 cid-sJZ27Jwv16" once="menu" id="menu2-e">
     
     <nav class="navbar navbar-dropdown navbar-fixed-top navbar-expand-lg">
