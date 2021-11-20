@@ -1,0 +1,10 @@
+@font-face {
+   font-family: 'SFUIDisplay-Bold';
+   font-display: swap;
+   src: url('SFUIDisplay-Bold/font.ttf');
+}
+@font-face {
+   font-family: 'SFUIDisplay-Light';
+   font-display: swap;
+   src: url('SFUIDisplay-Light/font.ttf');
+}
