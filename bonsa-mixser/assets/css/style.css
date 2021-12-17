@@ -247,13 +247,13 @@ Section Title Style
 
 .section-title h2 {
   font-size: 35px;
-  max-width: 510px;
+  max-width: 810px;
   margin: auto;
 }
 
 .section-title p {
   padding-top: 25px;
-  max-width: 620px;
+  max-width: 720px;
   margin: 0 auto;
 }
 
@@ -3376,7 +3376,7 @@ Inner Banner
 }
 
 .inner-bg1 {
-  background-image: url(../img/inner-banner/1.jpg);
+  background-image: url(../img/sobrenosotros-banner.jpeg);
 }
 
 .inner-bg2 {
@@ -3384,7 +3384,7 @@ Inner Banner
 }
 
 .inner-bg3 {
-  background-image: url(../img/inner-banner/3.jpg);
+  background-image: url(../img/sobrenosotros-banner.jpeg);
 }
 
 .inner-bg4 {
@@ -3400,7 +3400,7 @@ Inner Banner
 }
 
 .inner-bg7 {
-  background-image: url(../img/inner-banner/7.jpg);
+  background-image: url(../img/portafolio-banner.jpeg);
 }
 
 .inner-bg8 {
@@ -4863,6 +4863,22 @@ Animation CSS
 
 .pb-70 {
     padding-top: 90px;
+}
+
+.service-icon {
+  height: 76px;
+  width: 100%;
+}
+
+.service-cardlined {
+  max-width: 1000px;
+}
+
+@media screen and (max-width: 768px) {
+  .service-cardlined {
+    max-width: max-content;
+    height: 390px;
+  }
 }
 /*==================================
 Animation CSS End
