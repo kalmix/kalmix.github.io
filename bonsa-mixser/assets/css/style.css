@@ -3379,6 +3379,27 @@ Inner Banner
   background-image: url(../img/sobrenosotros-banner.jpeg);
 }
 
+.inner-bgerp {
+  background-image: url(../img/erp-banner.png);
+}
+
+.inner-bgredes {
+  background-image: url(../img/redes-banner.jpg) ;
+}
+
+.inner-bglogo {
+  background-image: url(../img/logo-banner.png);
+}
+
+.inner-bgvideo {
+  background-image: url(../img/video-banner.png);
+}
+
+
+.inner-bgweb {
+  background-image: url(../img/web-banner.jpg) !important;
+}
+
 .inner-bg2 {
   background-image: url(../img/inner-banner/2.jpg);
 }
@@ -4845,8 +4866,22 @@ Animation CSS
   padding-top: 100px;
 }
 
+@media only screen and (max-width: 767px) {
+  .online-store {
+    font-size: 16px !important;
+  }
+}
+
+
 .online-store {
-  font-size: 24px;
+  font-size: 20px;
+}
+
+@media screen and (max-width: 600px) {
+  .hide-on-mobile {
+    display: none;
+    visibility: hidden;
+  }
 }
 
 .benefits-icons {
