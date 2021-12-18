@@ -177,10 +177,10 @@
                 <div class="section-title text-center">
                     <span>Our Portfolio</span>
                     <h2>¡En Mixser Agency estamos orgullosos de lo que hemos construído!</h2>
-                    <p>
+                    <!-- <p>
                         It is a long established fact that a reader will be distracted 
                         by the readable content of a page when looking at its layout.
-                    </p>
+                    </p> -->
                 </div>
                 <div class="row pt-45 justify-content-center">
                     <div class="col-lg-4 col-md-6">
@@ -190,10 +190,10 @@
                                     <img src="assets/img/portafolio1.jpeg" alt="Portfolio Images">
                                 </a>
                                 <div class="portfolio-tag">
-                                    <a href="#"><span>Marketing</span></a>
+                                    <a href="#"><span>Desarrollo Web</span></a>
                                 </div>
                                 <div class="portfolio-content">
-                                    <a href="portfolio.html"><h3>Social Marketing</h3></a>
+                                    <a href="portfolio.html"><h3>Lapcom</h3></a>
                                     <i class='bx bxs-chevron-right'></i>
                                 </div>
                             </div>
@@ -207,10 +207,10 @@
                                     <img src="assets/img/portafolio2.jpeg" alt="Portfolio Images">
                                 </a>
                                 <div class="portfolio-tag">
-                                    <a href="#"><span>Research</span></a>
+                                    <a href="#"><span>Desarrollo Web</span></a>
                                 </div>
                                 <div class="portfolio-content">
-                                    <a href="portfolio.html"><h3>Data Analysis</h3></a>
+                                    <a href="portfolio.html"><h3>Perfect Smile</h3></a>
                                     <i class='bx bxs-chevron-right'></i>
                                 </div>
                             </div>
@@ -224,10 +224,10 @@
                                     <img src="assets/img/portafolio3.jpeg" alt="Portfolio Images">
                                 </a>
                                 <div class="portfolio-tag">
-                                    <a href="#"><span>Optimizing</span></a>
+                                    <a href="#"><span>Desarrollo Web</span></a>
                                 </div>
                                 <div class="portfolio-content">
-                                    <a href="portfolio.html"><h3>SEO Optimization</h3></a>
+                                    <a href="portfolio.html"><h3>Permodom SRL</h3></a>
                                     <i class='bx bxs-chevron-right'></i>
                                 </div>
                             </div>
@@ -241,10 +241,10 @@
                                     <img src="assets/img/portafolio4.jpeg" alt="Portfolio Images">
                                 </a>
                                 <div class="portfolio-tag">
-                                    <a href="#"><span>Marketing</span></a>
+                                    <a href="#"><span>Desarrollo Web</span></a>
                                 </div>
                                 <div class="portfolio-content">
-                                    <a href="portfolio.html"><h3>Content Marketing</h3></a>
+                                    <a href="portfolio.html"><h3>Alonzo Group</h3></a>
                                     <i class='bx bxs-chevron-right'></i>
                                 </div>
                             </div>
@@ -258,10 +258,10 @@
                                     <img src="assets/img/portafolio5.jpeg" alt="Portfolio Images">
                                 </a>
                                 <div class="portfolio-tag">
-                                    <a href="#"><span>Development</span></a>
+                                    <a href="#"><span>Desarrollo Web</span></a>
                                 </div>
                                 <div class="portfolio-content">
-                                    <a href="portfolio.html"><h3>App Development</h3></a>
+                                    <a href="portfolio.html"><h3>Inverse</h3></a>
                                     <i class='bx bxs-chevron-right'></i>
                                 </div>
                             </div>
@@ -480,5 +480,41 @@ Copyright ®️ 2018-2021 Mixser Agency SRL.
         <script src="assets/js/contact-form-script.js"></script>
         <!-- Custom JS -->
         <script src="assets/js/custom.js"></script>
+        <script>
+            var url = 'https://wati-integration-service.clare.ai/ShopifyWidget/shopifyWidget.js?5099';
+            var s = document.createElement('script');
+            s.type = 'text/javascript';
+            s.async = true;
+            s.src = url;
+            var options = {
+          "enabled":true,
+          "chatButtonSetting":{
+              "backgroundColor":"#4dc247",
+              "ctaText":"",
+              "borderRadius":"25",
+              "marginLeft":"0",
+              "marginBottom":"80",
+              "marginRight":"20",
+              "position":"right"
+          },
+          "brandSetting":{
+              "brandName":"Mixser",
+              "brandSubTitle":"Respondemos con velocidad",
+              "brandImg":"https://kalmix.github.io/mixser20/assets/images/favicon-128x128.png",
+              "welcomeText":"Hola! Somos Mixser!",
+              "messageText":"Hola, estamos aquí para ayudarle.",
+              "backgroundColor":"#0a5f54",
+              "ctaText":"Start Chat",
+              "borderRadius":"25",
+              "autoShow":false,
+              "phoneNumber":"18292586124"
+          }
+        };
+            s.onload = function() {
+                CreateWhatsappChatWidget(options);
+            };
+            var x = document.getElementsByTagName('script')[0];
+            x.parentNode.insertBefore(s, x);
+        </script>
     </body>
 </html>

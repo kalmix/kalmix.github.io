@@ -265,7 +265,7 @@
     
                         <div class="col-lg-5">
                             <div class="banner-img-2">
-                                <img src="assets/img/home-2/1.png" alt="Banner Images">
+                                <img src="assets/img/landing-img-main.png" alt="Banner Images">
                                 <div class="dots">
                                     <img src="assets/img/home-2/dots.png" alt="Dots Images">
                                 </div>
@@ -331,7 +331,7 @@
                     <div class="col-lg-5 col-xxl-6 pl-0">
                         <div class="about-img-2">
                             <div class="about-man">
-                                <img src="assets/img/about/2.png" alt="About Images">
+                                <img src="assets/img/about-img-mixser.png" alt="About Images">
                             </div>
                             <div class="about-shape1">
                                 <img src="assets/img/about/s-1.png" alt="Shape">
@@ -514,7 +514,7 @@
     
                         <div class="col-lg-6">
                             <div class="faq-img-2">
-                                <img src="assets/img/faq/2.jpg" alt="fAQ Images">
+                                <img src="assets/img/full-team-img.png" alt="fAQ Images">
                             </div>
                             <div class="faq-content-text">
                                 
@@ -664,7 +664,7 @@
         <!-- Counter Area End -->
 
         <!-- Price Area -->
-        <div class="price-area price-bg pt-100 pb-70">
+        <!-- <div class="price-area price-bg pt-100 pb-70">
             <div class="container">
                 <div class="section-title text-center">
                     <span>Pricing Table</span>
@@ -806,7 +806,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <!-- Price Area End -->
 
         <!-- Member Area -->
@@ -1083,11 +1083,11 @@
             <div class="container-fluid p-0">
                 <div class="section-title text-center">
                     <span>Testimonial</span>
-                    <h2>Our Clients Feedback</h2>
-                    <p>
+                    <h2>Lo que dicen nuestros clientes</h2>
+                    <!-- <p>
                         It is a long established fact that a reader will be distracted by 
                         the readable content of a page when looking at its layout.
-                    </p>
+                    </p> -->
                 </div>
 
                 <div class="client-slider owl-carousel owl-theme">
@@ -1405,7 +1405,7 @@
                     </div>
                 </div>
             </div>
-
+            
             <div class="footer-bottom">
                 <div class="container">
                     <div class="row align-items-center">
@@ -1444,5 +1444,41 @@ Copyright ®️ 2018-2021 Mixser Agency SRL.
         <script src="assets/js/contact-form-script.js"></script>
         <!-- Custom JS -->
         <script src="assets/js/custom.js"></script>
+        <script>
+            var url = 'https://wati-integration-service.clare.ai/ShopifyWidget/shopifyWidget.js?5099';
+            var s = document.createElement('script');
+            s.type = 'text/javascript';
+            s.async = true;
+            s.src = url;
+            var options = {
+          "enabled":true,
+          "chatButtonSetting":{
+              "backgroundColor":"#4dc247",
+              "ctaText":"",
+              "borderRadius":"25",
+              "marginLeft":"0",
+              "marginBottom":"80",
+              "marginRight":"20",
+              "position":"right"
+          },
+          "brandSetting":{
+              "brandName":"Mixser",
+              "brandSubTitle":"Respondemos con velocidad",
+              "brandImg":"https://kalmix.github.io/mixser20/assets/images/favicon-128x128.png",
+              "welcomeText":"Hola! Somos Mixser!",
+              "messageText":"Hola, estamos aquí para ayudarle.",
+              "backgroundColor":"#0a5f54",
+              "ctaText":"Start Chat",
+              "borderRadius":"25",
+              "autoShow":false,
+              "phoneNumber":"18292586124"
+          }
+        };
+            s.onload = function() {
+                CreateWhatsappChatWidget(options);
+            };
+            var x = document.getElementsByTagName('script')[0];
+            x.parentNode.insertBefore(s, x);
+        </script>
     </body>
 </html>

@@ -203,7 +203,7 @@
         <!-- About Area End -->
 
         <!-- Price Area -->
-        <div class="price-area price-shape pt-100 pb-70">
+        <!-- <div class="price-area price-shape pt-100 pb-70">
             <div class="container">
                 <div class="section-title text-center">
                 
@@ -327,7 +327,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <!-- Price Area End -->
 
         <!-- Counter Area -->
@@ -337,32 +337,32 @@
                     <div class="col-lg-3 col-sm-6 col-md-3">
                         <div class="single-counter">
                             <i class='flaticon-success'></i>
-                            <h3><span class="counter">15</span></h3>
-                            <p>Years Experience</p>
+                            <h3><span class="counter">4</span></h3>
+                            <p>Años de experiencia</p>
                         </div>
                     </div>
 
                     <div class="col-lg-3 col-sm-6 col-md-3">
                         <div class="single-counter">
                             <i class='flaticon-launch'></i>
-                            <h3><span class="counter">900</span>+</h3>
-                            <p>Projects Done</p>
+                            <h3><span class="counter">50</span>+</h3>
+                            <p>Proyectos Exitosos</p>
                         </div>
                     </div>
 
                     <div class="col-lg-3 col-sm-6 col-md-3">
                         <div class="single-counter">
                             <i class='flaticon-customer'></i>
-                            <h3><span class="counter">800</span>+</h3>
-                            <p>Happy Clients</p>
+                            <h3><span class="counter">50</span>+</h3>
+                            <p>Clientes Satisfechos</p>
                         </div>
                     </div>
 
                     <div class="col-lg-3 col-sm-6 col-md-3">
                         <div class="single-counter">
                             <i class='flaticon-team-building'></i>
-                            <h3><span class="counter">25</span>+</h3>
-                            <p>Expert Members</p>
+                            <h3><span class="counter">+8</span>+</h3>
+                            <p>Miembros Del Equipo</p>
                         </div>
                     </div>
                 </div>
@@ -384,7 +384,7 @@
                 <div class="client-slider owl-carousel owl-theme">
                     <div class="client-item">
                         <div class="client-item-img">
-                            <img src="assets/img/testimonial/t1.png" alt="Testimonial Images">
+                            <img src="assets/img/cristina-100x100.png" alt="Testimonial Images">
                         </div>
                         <h3>Cristina Rodríguez, CEO Badén Carnes</h3>
                         <p>
@@ -394,7 +394,7 @@
 
                     <div class="client-item">
                         <div class="client-item-img">
-                            <img src="assets/img/testimonial/t4.png" alt="Testimonial Images">
+                            <img src="assets/img/narciso-100x100.png" alt="Testimonial Images">
                         </div>
                         <h3>Narciso, CEO NG Frutas</h3>
                         <p>
@@ -404,21 +404,11 @@
 
                     <div class="client-item">
                         <div class="client-item-img">
-                            <img src="assets/img/testimonial/t5.png" alt="Testimonial Images">
+                            <img src="assets/img/celine-100x100.png" alt="Testimonial Images">
                         </div>
                         <h3>Celine Alonzo, CEO Alonzo Group</h3>
                         <p>
                             Estoy muy contenta con los resultados que hemos logrado luego que empezaron a trabajar el Manejo de Redes Sociales de mi empresa. Son un equipo muy creativo, dedicado y enfocado a resultados. Los recomiendo al 100%
-                        </p>
-                    </div>
-                    <div class="client-item">
-                        <div class="client-item-img">
-                            <img src="assets/img/testimonial/t3.png" alt="Testimonial Images">
-                        </div>
-                        <h3>Evanaa</h3>
-                        <p>
-                            Restaurants range from inexpensive and informal lunching or dining places 
-                            catering to people working nearby, with modest food served in simple settings at low prices.
                         </p>
                     </div>
                 </div>
@@ -673,5 +663,41 @@ Copyright ®️ 2018-2021 Mixser Agency SRL.
         <script src="assets/js/contact-form-script.js"></script>
         <!-- Custom JS -->
         <script src="assets/js/custom.js"></script>
+        <script>
+            var url = 'https://wati-integration-service.clare.ai/ShopifyWidget/shopifyWidget.js?5099';
+            var s = document.createElement('script');
+            s.type = 'text/javascript';
+            s.async = true;
+            s.src = url;
+            var options = {
+          "enabled":true,
+          "chatButtonSetting":{
+              "backgroundColor":"#4dc247",
+              "ctaText":"",
+              "borderRadius":"25",
+              "marginLeft":"0",
+              "marginBottom":"80",
+              "marginRight":"20",
+              "position":"right"
+          },
+          "brandSetting":{
+              "brandName":"Mixser",
+              "brandSubTitle":"Respondemos con velocidad",
+              "brandImg":"https://kalmix.github.io/mixser20/assets/images/favicon-128x128.png",
+              "welcomeText":"Hola! Somos Mixser!",
+              "messageText":"Hola, estamos aquí para ayudarle.",
+              "backgroundColor":"#0a5f54",
+              "ctaText":"Start Chat",
+              "borderRadius":"25",
+              "autoShow":false,
+              "phoneNumber":"18292586124"
+          }
+        };
+            s.onload = function() {
+                CreateWhatsappChatWidget(options);
+            };
+            var x = document.getElementsByTagName('script')[0];
+            x.parentNode.insertBefore(s, x);
+        </script>
     </body>
 </html>
