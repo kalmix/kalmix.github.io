@@ -32,30 +32,10 @@
 
 <head>
     <meta charset="UTF-8">
+    <title>donut.js</title>
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="stylesheet" href="./style.css">
     <script src="https://kit.fontawesome.com/c24f321bf9.js" crossorigin="anonymous"></script>
-    <!-- Primary Meta Tags -->
-<title>donut.js — mini demo</title>
-<meta name="title" content="donut.js — mini demo">
-<meta name="description" content="At its core, it’s a framebuffer and a Z-buffer into which I render pixels. Since it’s just rendering relatively low-resolution ASCII art, I massively cheat. All it does is plot pixels along the surface of the torus at fixed-angle increments, and does it densely enough that the final result looks solid. The “pixels” it plots are ASCII characters corresponding to the illumination value of the surface at each point: .,-~:;=!*#$@ from dimmest to brightest. No raytracing required.
-">
-
-<!-- Open Graph / Facebook -->
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://kalmix.github.io/donut/">
-<meta property="og:title" content="donut.js — mini demo">
-<meta property="og:description" content="At its core, it’s a framebuffer and a Z-buffer into which I render pixels. Since it’s just rendering relatively low-resolution ASCII art, I massively cheat. All it does is plot pixels along the surface of the torus at fixed-angle increments, and does it densely enough that the final result looks solid. The “pixels” it plots are ASCII characters corresponding to the illumination value of the surface at each point: .,-~:;=!*#$@ from dimmest to brightest. No raytracing required.
-">
-<meta property="og:image" content="https://i.imgur.com/QYjhpY2.png">
-
-<!-- Twitter -->
-<meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:url" content="https://kalmix.github.io/donut/">
-<meta property="twitter:title" content="donut.js — mini demo">
-<meta property="twitter:description" content="At its core, it’s a framebuffer and a Z-buffer into which I render pixels. Since it’s just rendering relatively low-resolution ASCII art, I massively cheat. All it does is plot pixels along the surface of the torus at fixed-angle increments, and does it densely enough that the final result looks solid. The “pixels” it plots are ASCII characters corresponding to the illumination value of the surface at each point: .,-~:;=!*#$@ from dimmest to brightest. No raytracing required.
-">
-<meta property="twitter:image" content="https://i.imgur.com/QYjhpY2.png">
 </head>
 
 <body>
@@ -117,8 +97,8 @@
     <div class="container" id="cont">
         <div class="center" id="mydiv">
             <button accesskey="s" id="btn" type="button" class="but fill" onclick="anim1();"><i class="fa fa-play icon"></i>Spin The Donut</button>
-            <p class="but mid"><kbd>F11</kbd> Fullscreen</p>
-            <p class="but mid"><kbd>Alt</kbd> + <kbd>S</kbd> Spin</p>
+            <p class="but mid"><kbd>F11</kbd></p>
+            <p class="but mid"><kbd>Alt</kbd> + <kbd>S</kbd></p>
 
             <!-- <p class="but mid"><kbd>made with love with love by kalmix</kbd></p> -->
         </div>
@@ -159,13 +139,11 @@
             </div>
         </div>
     </div>
-
-    <!-- End of Contact Window -->
     <div class="dock">
         <div class="dock-container">
             <li class="li-1">
                 <div class="name">Finder</div>
-                <img class="ico" src="finder.png" alt="">
+                <img class="ico finder-icon" src="finder.png" alt="">
             </li>
             <li class="li-2">
                 <div class="name">Siri</div>

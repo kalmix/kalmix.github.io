@@ -290,3 +290,16 @@ $('.contact-icon').on('click', function() {
         });
     }
 });
+
+$('.finder-icon').on('click', function() {
+    var register = $('.finder');
+    if (register.css('opacity') === '0') {
+        register.css({
+            'opacity': '1'
+        });
+    } else {
+        register.css({
+            'opacity': '0'
+        });
+    }
+});
