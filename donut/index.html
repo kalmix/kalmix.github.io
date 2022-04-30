@@ -18,9 +18,6 @@
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="preloader.js"></script>
-    <nav>
-    </nav>
-    <!-- partial:index.partial.html -->
     <div class="containerd window">
         <div class="center" id="mydiv">
             <div id="mydivheader">
@@ -77,6 +74,44 @@
             <!-- <p class="but mid"><kbd>made with love with love by kalmix</kbd></p> -->
         </div>
     </div>
+
+    <!-- Contact Window -->
+    <div class="containerd window-contact">
+        <div class="center-contact" id="contact">
+            <div id="mydivheader">
+                <div class="titlebar">
+                    <div class="buttons">
+                        <div class="close">
+                            <a class="closebutton-contact" href="#"><span><strong>x</strong></span></a>
+                            <!-- close button link -->
+                        </div>
+                        <div class="minimize">
+                            <a class="minimizebutton-contact" href="#"><span><strong>&ndash;</strong></span></a>
+                            <!-- minimize button link -->
+                        </div>
+                        <div class="zoom">
+                            <a class="zoombutton" href="#"><span><strong>+</strong></span></a>
+                            <!-- zoom button link -->
+                        </div>
+                    </div>
+                    <object data="atom.png" width="11" height="11"> </object> Atom — contact.js
+                    <!-- window title -->
+                </div>
+                <!-- donut.js preview -->
+                <pre id="app" style="background-color: rgba(0, 0, 0, 0.7); text-align: left;color: #ccc; font-size: 10pt; backdrop-filter: blur(14px);">
+                    <code id="htmlViewer" style="color:rgb(170, 170, 170); font-weight:400;display:block; padding: 1rem;"><span style="color:rgb(172, 172, 172); font-weight:400;">//website by kalmix</span>
+<span style="color:rgb(172, 172, 172); font-weight:400;">//donut.js code by aki0m</span>
+                        
+<a class="root" href="http://kalmix.github.io"><span style="color:rgb(102, 68, 170); font-weight:400;">var</span> root = kalmix.github.io</a>
+                        
+<span style="color:rgb(50, 170, 238); font-weight:400;">console</span>.log(<span style="color:rgb(255, 204, 51); font-weight:400;">&quot;go to to root domain for more&quot;</span>);
+<a class="root" href="http://kalmix.github.io"><span style="color:rgb(102, 68, 170); font-weight:400;">return</span>(root);</a></code>
+                </pre>
+            </div>
+        </div>
+    </div>
+
+    <!-- End of Contact Window -->
     <div class="dock">
         <div class="dock-container">
             <li class="li-1">
@@ -91,9 +126,9 @@
                 <div class="name">LaunchPad</div>
                 <img class="ico" src="launchpad.png" alt="">
             </li>
-            <li class="li-4">
-                <div class="name">Contacts</div>
-                <img class="ico" src="contacts.png" alt="">
+            <li class="li-1">
+                <div class="name">Atom</div>
+                <img class="ico contact-icon" src="atom.png" alt="">
             </li>
             <li class="li-5">
                 <div class="name">Notes</div>
