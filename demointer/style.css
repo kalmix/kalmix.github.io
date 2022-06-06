@@ -1,0 +1,81 @@
+/* Hide Scrollbar and Scroll Functionality */
+body.preloader-site {
+    overflow: hidden !important;
+}
+
+/* Make the preloader take the whole screen and send it to the top layer */
+.preloader-wrapper {
+    height: 100%;
+    width: 100%;
+    background: #353535;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999999;
+}
+
+/* Center preloader and set preloader size */
+.preloader-wrapper .preloader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 50px;
+}
+
+.random-word {
+    color: #6c63ff;
+    /* transition: all 1.25s; */
+    animation: slidedown 4s infinite;
+    -webkit-animation: slidedown 4s infinite;
+    -moz-animation: slidedown 4s infinite;
+    display: inline-block;
+    width: auto;
+  }
+  
+  @keyframes slidedown {
+    0% {
+      opacity: 50;
+    }
+    
+    5% {
+      opacity: 0;
+      transform: translateY(0.5em);
+    }
+    
+    7% {
+      transform: translateY(-1em);
+    }
+    
+    10% {
+      opacity: 0;
+    }
+    
+    20% {
+      transform: translateY(0);
+      opacity: 100;
+    }
+  }
+
+.transition {
+    transition: all 1s;
+    width: auto;
+}
+
+@media only screen and (min-width: 200px) and (max-width: 550px) {
+    br {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 1310px) {
+    .cid-t7SAMM50e0 {
+        padding-bottom: 0 !important;
+        height: 1200px !important;
+    }
+}
+
+.no-anim {
+    animation-name: noname !important;
+}
