@@ -79,3 +79,17 @@ body.preloader-site {
 .no-anim {
     animation-name: noname !important;
 }
+
+@keyframes fadeInAnimation {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+   }
+}
+
+.preloader {
+  animation-name: fadeInAnimation;
+  animation-duration: 1.5s;
+}
