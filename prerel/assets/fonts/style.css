@@ -1,0 +1,15 @@
+@font-face {
+   font-family: 'GT Walsheim Pro Bold Regular';
+   font-display: swap;
+   src: url('GT Walsheim Pro Bold Regular/font.ttf');
+}
+@font-face {
+   font-family: 'GT-Planar-Black';
+   font-display: swap;
+   src: url('GT-Planar-Black/font.woff');
+}
+@font-face {
+   font-family: 'GT Walsheim Pro Medium Regular';
+   font-display: swap;
+   src: url('GT Walsheim Pro Medium Regular/font.ttf');
+}
