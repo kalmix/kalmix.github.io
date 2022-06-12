@@ -63,3 +63,38 @@ html {
   }
 
   body {background-color: #232323 !important;}
+
+
+  .cid-sHeqG4hj7M .table-wrap {
+    margin: 0 1rem 3rem 1rem;
+    border: 1px solid #efefef;
+    border-radius: 3%;
+    height: 90%;
+    width: 100%;
+    padding: 3rem;
+    transition: all .3s ease-in-out;
+}
+
+.cid-sHeqG4hj7M .table-heading, .cid-sHeqG4hj7M .table-icon, .cid-sHeqG4hj7M .table-pricing {
+  color: #7375ab;
+  text-align: center;
+  font-size: larger;
+  transition: all .3s ease-in-out;
+}
+
+.cid-sVh2oRJfxy .table-heading, .cid-sVh2oRJfxy .table-icon, .cid-sVh2oRJfxy .table-pricing {
+  color: #7375ab;
+  text-align: center;
+  transition: all .3s ease-in-out;
+  font-size: larger;
+}
+
+.cid-sVh2oRJfxy .table-wrap {
+  height: 90%;
+  margin: 0 1rem 3rem 1rem;
+  border: 1px solid #efefef;
+  border-radius: 3%;
+  padding: 3rem;
+  width: 100%;
+  transition: all .3s ease-in-out;
+}
