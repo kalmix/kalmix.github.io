@@ -1,0 +1,59 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.2.0/lib/p5.js"></script>
+    <script src="index.js"></script>
+    <script src="sketch.js"></script>
+  </head>
+  <body>
+    <main></main>
+    <h2 id="fps">FPS: 60</h2>
+    <h1 id="frame">Frame: 0</h1>
+    <input
+      id="slide"
+      type="range"
+      min="1"
+      max="60"
+      step="0"
+      value="60"
+      onchange="updateSlider(this.value)"
+    />
+    <div id="sliderAmount"></div>
+    <button class="btn" onclick="toggleFullScreen()" id="btn">
+      Fullscreen <span class="material-symbols-outlined"> fullscreen </span>
+    </button>
+    <button class="stop" onclick="stopAnimation()" id="stop">
+      Stop Animation
+      <span class="material-symbols-outlined"> play_circle </span>
+    </button>
+    <div class="cursor"></div>
+
+    <div class="parent">
+      <div id="color" class="child red" onclick="colorChange(1)">Red</div>
+      <div id="color" class="child blue" onclick="colorChange(2)">Blue</div>
+      <div id="color" class="child yellow" onclick="colorChange(3)">Yellow</div>
+      <div id="color" class="child black" onclick="colorChange(4)">Black</div>
+    </div>
+
+    <input
+      type="range"
+      min="0"
+      max="270"
+      step="1"
+      value="270"
+      id="angularity"
+      onchange="updateSlider(this.value)"
+    />
+    <div id="angularityAmount">Angle:</div>
+  </body>
+</html>

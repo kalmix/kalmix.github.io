@@ -1,0 +1,265 @@
+main {
+  background: #fff;
+  padding: 0 0 0 0;
+  margin: 0 0 0 0;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 1s ease-in-out;
+}
+
+button {
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  font-family: "Share Tech Mono", monospace;
+  background-color: black;
+  color: white;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 18px;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.btn {
+  --light: #fff;
+  --dark: #414856;
+  --border: #c3c8de;
+  --background: #4f29f0;
+  border-radius: 10px;
+  color: black;
+  background: none;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 0 10px 30px rgba(65, 72, 86, 0.1);
+  transition: transform 0.1s linear, color 0.1s linear, background 0.15s linear;
+}
+
+.btn:hover {
+  color: #fff;
+  background: black;
+  transform: translateY(-3px);
+  border: 1px solid #ffc83d;
+}
+
+.stop:hover {
+  color: black;
+  background: white;
+  transform: translateY(-3px);
+  border: 1px solid #0078d7;
+}
+
+.child {
+  transition: transform 0.1s linear, color 0.1s linear, background 0.15s linear;
+}
+
+.child:hover {
+  transform: translateY(-3px);
+  transition: transform 0.1s linear, color 0.1s linear, background 0.15s linear;
+}
+
+.red:hover {
+  color: rgb(255, 0, 0);
+  border: 1px solid #ff0000;
+  background: none;
+}
+
+.blue:hover {
+  color: rgb(0, 0, 255);
+  border: 1px solid #0000ff;
+  background: none;
+}
+
+.yellow:hover {
+  color: rgb(255, 255, 0);
+  border: 1px solid #ffff00;
+  background: none;
+}
+
+.black:hover {
+  color: rgb(0, 0, 0);
+  border: 1px solid #000000;
+  background: none;
+}
+
+.stop {
+  position: fixed;
+  bottom: 20px;
+  right: 250px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  transition: transform 0.1s linear, color 0.1s linear, background 0.15s linear;
+  font-family: "Share Tech Mono", monospace;
+  background-color: black;
+  color: white;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 18px;
+}
+
+.cursor {
+  --cursor: black;
+  position: fixed;
+  top: -50px;
+  z-index: 99;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: none;
+  border: solid 2px var(--cursor);
+  pointer-events: none;
+  transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease;
+}
+
+[cursor="link"]:hover ~ .cursor {
+  mix-blend-mode: difference;
+  transform: scale(1.5);
+  cursor: none;
+  background: #fff;
+  border-color: #fff;
+}
+
+h1 {
+  font-family: "Share Tech Mono", monospace;
+  font-size: 20px;
+  color: black;
+  position: fixed;
+  top: 50px;
+  left: 30px;
+  z-index: 99;
+}
+
+input {
+  font-family: "Share Tech Mono", monospace;
+  font-size: 20px;
+  color: black;
+  position: fixed;
+  top: 20px;
+  left: 30px;
+  z-index: 99;
+}
+
+/*Chrome*/
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  input[type="range"] {
+    overflow: hidden;
+    width: 80px;
+    -webkit-appearance: none;
+    background-color: #d7d7d7;
+  }
+
+  input[type="range"]::-webkit-slider-runnable-track {
+    height: 10px;
+    -webkit-appearance: none;
+    color: #000000;
+    margin-top: -1px;
+  }
+
+  input[type="range"]::-webkit-slider-thumb {
+    width: 10px;
+    -webkit-appearance: none;
+    height: 10px;
+    cursor: ew-resize;
+    background: #000000;
+    box-shadow: -80px 0 0 80px #5d5d5d;
+  }
+}
+
+h2 {
+  font-family: "Share Tech Mono", monospace;
+  font-size: 20px;
+  color: black;
+  position: fixed;
+  top: 25px;
+  left: 30px;
+  z-index: 99;
+}
+
+span {
+  display: block !important;
+}
+
+.parent {
+  position: fixed;
+  top: 117px;
+  left: 97px;
+  transform: translate(-50%, -50%);
+  width: 135px;
+  height: 51px;
+  z-index: 99;
+}
+
+.child {
+  margin: 10px;
+  background-color: #c3c8de;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  height: 30px;
+  font-family: "Share Tech Mono", monospace;
+  color: #fff;
+}
+
+.red {
+  background-color: #ff0000;
+}
+
+.green {
+  background-color: #00ff00;
+}
+
+.yellow {
+  background-color: #ffff00;
+}
+
+.black {
+  background-color: #000000;
+}
+
+.blue {
+  background-color: #0000ff;
+}
+
+#angularity {
+  position: fixed;
+  top: 260px;
+  left: 30px;
+  z-index: 99;
+  font-family: "Share Tech Mono", monospace;
+  font-size: 20px;
+  color: black;
+}
+
+#angularityAmount {
+  position: fixed;
+  top: 276px;
+  left: 30px;
+  z-index: 99;
+  height: 20px;
+  font-family: "Share Tech Mono", monospace;
+  font-size: 20px;
+  color: black;
+}
