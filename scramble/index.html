@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Random Rubik's Cube Scramble Generator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        font-family: 'Space Mono', monospace;
+      }
+      #scramble {
+        font-size: 50px;
+        margin-bottom: 20px;
+        opacity: 1;
+        transition: opacity 0.5s ease-out;
+        text-align: center;
+        background: radial-gradient(circle, rgba(34,49,107,1) 0%, rgba(0,0,0,1) 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      #scramble.hidden {
+        opacity: 0;
+      }
+      button {
+        padding: 10px 20px;
+        font-size: 16px;
+        background: radial-gradient(circle, rgb(24, 35, 75) 0%, rgb(0, 0, 0) 100%);
+        border: none;
+        color: white;
+        border-radius: 4px;
+        cursor: pointer;
+        font-family: 'Space Mono', monospace;
+        transition: all 0.3s;
+      }
+      button:hover {
+        background-color: #0a1420;
+        box-shadow: 0 0 30px 15px rgb(24, 35, 75);
+        transition: all 0.3s;
+      }
+      button:active {
+        background-color: #05111d;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="scramble">🧊</div>
+    <button onclick="generateScramble()">Generate Scramble 🧊</button>
+    <script>
+      function generateScramble() {
+        // Define the moves and their rotations
+        const moves = ["U", "D", "L", "R", "F", "B"];
+        const rotations = ["", "'", "2"];
+
+        // Generate 25 random moves
+        let scramble = "";
+        for (let i = 0; i < 15; i++) {
+          let move = moves[Math.floor(Math.random() * moves.length)];
+          let rotation = rotations[Math.floor(Math.random() * rotations.length)];
+          scramble += move + rotation + " ";
+        }
+
+        // Fade out the old scramble
+        let oldScramble = document.getElementById("scramble");
+        oldScramble.classList.add("hidden");
+
+        // Update the scramble display with a delay
+        setTimeout(() => {
+          let newScramble = document.createElement("div");
+          newScramble.textContent = scramble;
+          newScramble.id = "scramble";
+          document.body.insertBefore(newScramble, oldScramble);
+          oldScramble.remove();
+        }, 500);
+      }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+    <script>
+      const options = {
+        //bottom: '64px', // default: '32px'
+        //right: 'unset', // default: '32px'
+        //left: '32px', // default: 'unset'
+        time: '0.7s', // default: '0.3s'
+        mixColor: '#fff', // default: '#fff'
+        backgroundColor: '#fff',  // default: '#fff'
+        buttonColorDark: '#000',  // default: '#100f2c'
+        buttonColorLight: '#fff', // default: '#fff'
+        saveInCookies: false, // default: true,
+        label: '🌓', // default: ''
+        autoMatchOsTheme: true // default: true
+        }
+
+        const darkmode = new Darkmode(options);
+        darkmode.showWidget();
+    </script>
+  </body>
+</html>
