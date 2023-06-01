@@ -28,12 +28,44 @@
   <link rel="preload" href="https://fonts.googleapis.com/css?family=Jost:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Jost:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
   <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
-
+  <style>
+    /* Hide Scrollbar and Scroll Functionality */
+    body.preloader-site {
+        overflow: hidden;
+    }
+    
+    /* Make the preloader take the whole screen and send it to the top layer */
+    .preloader-wrapper {
+        height: 100%;
+        width: 100%;
+        background: #FFF;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 9999999;
+    }
+    
+    /* Center preloader and set preloader size */
+    .preloader-wrapper .preloader {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        width: 500px;
+    }
+</style>  
   
   
   
 </head>
 <body>
+    <div class="preloader-wrapper">
+        <div class="preloader">
+            <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+            <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_0yCwpZ.json" background="transparent" speed="1" loop autoplay></lottie-player>
+        </div>
+    </div>
   
   <section data-bs-version="5.1" class="menu menu2 cid-tFWni8bOWI" once="menu" id="menu2-0">
     
@@ -413,5 +445,17 @@
 </section><section><a href="https://mobiri.se"></a><a href="https://mobiri.se"></a></section><script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>  <script src="assets/parallax/jarallax.js"></script>  <script src="assets/smoothscroll/smooth-scroll.js"></script>  <script src="assets/ytplayer/index.js"></script>  <script src="assets/dropdown/js/navbar-dropdown.js"></script>  <script src="assets/playervimeo/vimeo_player.js"></script>  <script src="assets/theme/js/script.js"></script>  
   
   
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script>
+    $(document).ready(function($) {
+        var Body = $('body');
+        Body.addClass('preloader-site');
+    });
+
+    $(window).on('load', function() {
+        $('.preloader-wrapper').fadeOut();
+        $('body').removeClass('preloader-site');
+    });
+</script>
 </body>
 </html>
