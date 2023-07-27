@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
+    
+  body {
+    font-family: 'JetBrains Mono', monospace;
+    
+  }
+
+  p {
+    font-size: 1.5rem;
+    font-family: 'JetBrains Mono', monospace;
+    color: #fff;
+  }
+  svg {
+    -webkit-filter: invert(100%); /* safari 6.0 - 9.0 */
+            filter: invert(100%);
+    display: block;
+    height: 200px;
+    width: 200px;
+  }
+    /* Add Retro Tetris style */
+    #buttonContainer {
+      
+      margin: 20px;
+    }
+
+
+    .glow-effect {
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.7); /* You can adjust the glow color and intensity here */
+    }
+    button {
+      background-color: #00aaff;
+      color: #fff;
+      border: none;
+      
+      padding: 10px 20px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ;
+      font-family: 'JetBrains Mono', monospace;
+      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    span.code {
+      font-family: 'JetBrains Mono', monospace;
+      background-color: #f1f1f1;
+      padding: 2px 5px;
+      border-radius: 4px;
+      font-size: 14px;
+      color: #333;
+    }
+
+    /* Add emojis to buttons (you can replace the emojis with any other emojis you prefer) */
+    #pauseButton:before {
+      content: "⏸️";
+      margin-right: 8px;
+    }
+
+    #resetButton:before {
+      content: "🔄";
+      margin-right: 8px;
+    }
+
+    #muteButton:before {
+      content: "🔇";
+      margin-right: 8px;
+    }
+
+
+
+    /* Add cool hover effect */
+    button:hover {
+      background-color: #ffaa00;
+      transform: scale(1.1);
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
