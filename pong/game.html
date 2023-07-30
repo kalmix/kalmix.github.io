@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>LÖVE Game</title>
+	<style type="text/css">
+html, body {
+  background-color: #000;
+  margin: 0;
+  height: 100%;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 18px;
+  overflow: hidden;
+}
+
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  opacity: 0.6;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%),
+    linear-gradient(
+      90deg,
+      rgba(255, 0, 0, 0.06),
+      rgba(0, 255, 0, 0.02),
+      rgba(0, 0, 255, 0.06)
+    );
+  background-size: 100% 4px, 30px 100%;
+  z-index: 1;
+  animation: flicker 100ms infinite;
+}
+.video-overlay:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(255, 255, 255);
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0) 70%,
+    rgba(0, 0, 0, 1) 100%
+  );
+  z-index: 2;
+}
+
+@keyframes flicker {
+  0% {
+    transform: translateY(1px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+#wrapper {
+  display: flex; /* Add flex display to the wrapper */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  min-height: 100%;
+}
+
+#main {
+  background-color: #000;
+  margin: 9px;
+  padding: 15px 0;
+  border: 1px solid black;
+  border-radius: 10px;
+  box-shadow: 3px 3px 0 0 rgba(0, 0, 0, 0.3);
+}
+
+canvas {
+  display: block;
+  margin: 0 auto;
+  border: 1px solid black;
+  border-radius: 10px;
+  box-shadow: 3px 3px 0 0 rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 850px)
+{
+	#wrapper { font-size: 80%; }
+	#title { padding: .2em; }
+}
+	</style>
+</head>
+<body>
+<div id="wrapper">
+	<div id="main">
+		<div class="video-overlay">
+			<h1 id="title" style="text-align:center;color:#FFF;font-size:2em">Pong Remake (P1: W, S P2: ↑, ↓)</h1>
+		</div>
+		<center><canvas id="canvas" width="1280" height="720" style="max-width:100%;background:#000;vertical-align:middle"></canvas></center>
+	</div>
+</div>
+
+<script type="text/javascript">(function(){
+var TXT =
+{
+	PLAYBTN: 'Presiona Click Aquí para Jugar 🕹️',
+	LOAD:    'Cargando Juego ⌛',
+	PARSE:   'Analizando Juego 📊',
+	EXECUTE: 'Ejecutando Juego 🎮',
+	DLERROR: 'Error al descargar el juego',
+	NOWEBGL: 'Tu navegador no soporta WebGL',
+};
+var canvas = document.getElementById('canvas'), ctx;
+var Msg = function(m)
+{
+	ctx.clearRect(0, 0, canvas.width, canvas.height);
+	ctx.fillStyle = '#888';
+	for (var i = 0, a = m.split('\n'), n = a.length; i != n; i++)
+		ctx.fillText(a[i], canvas.width/2, canvas.height/2-(n-1)*20+10+i*40);
+};
+var Fail = function(m)
+{
+	canvas.outerHTML = '<div style="max-width:90%;width:'+canvas.clientWidth+'px;height:'+canvas.clientHeight+'px;background:#000;display:table-cell;vertical-align:middle"><div style="background-color:#FFF;color:#000;padding:1.5em;max-width:640px;width:80%;margin:auto;text-align:center">'+TXT.NOWEBGL+(m?'<br><br>'+m:'')+'</div></div>';
+};
+var DoExecute = function()
+{
+	Msg(TXT.EXECUTE);
+	Module.canvas = canvas.cloneNode(false);
+	Module.canvas.oncontextmenu = function(e) { e.preventDefault() };
+	Module.setWindowTitle = function(title) { };
+	Module.postRun = function()
+	{
+		if (!Module.noExitRuntime) { Fail(); return; }
+		canvas.parentNode.replaceChild(Module.canvas, canvas);
+		Txt = Msg = ctx = canvas = null;
+		Module.canvas.focus();
+	};
+	setTimeout(function() { Module.run(['/p']); }, 50);
+};
+var DoLoad = function()
+{
+	Msg(TXT.LOAD);
+	var xhr = new XMLHttpRequest();
+	xhr.open('GET', 'game.js');
+	xhr.onprogress = function(e)
+	{
+		if (!e.lengthComputable || ctx.pCnt++ < 5) return;
+		var x = canvas.width/2-150, y = canvas.height*.6, w = Math.min(e.loaded/e.total,1)*300, g = ctx.createLinearGradient(x,0,x+w,0);
+		g.addColorStop(0,'#72d3ff');g.addColorStop(1,'#a2d4ea');
+		ctx.fillStyle = '#1497ce'; ctx.fillRect(x-2,y-2,304,28);
+		ctx.fillStyle = '#FFFFFF'; ctx.fillRect(x  ,y  ,300,24);
+		ctx.fillStyle = g;         ctx.fillRect(x  ,y  ,w,  24);
+	};
+	xhr.onerror = xhr.onabort = function() { Msg(TXT.DLERROR); canvas.disabled = false; };
+	xhr.onload = function()
+	{
+		if (xhr.status != 200) { Msg(TXT.DLERROR + '<br>Status: ' + xhr.statusText ); canvas.disabled = false; return; }
+		Msg(TXT.PARSE);
+		setTimeout(function()
+		{
+			window.onerror = function(e,u,l) { Fail(e+'<br>('+u+':'+l+')'); };
+			Module = { TOTAL_MEMORY: 1024*1024*24, TOTAL_STACK: 1024*1024*2, currentScriptUrl: '-', preInit: DoExecute };
+			var s = document.createElement('script'), d = document.documentElement;
+			s.textContent = xhr.response;
+			d.appendChild(s);
+			d.removeChild(s);
+			xhr = xhr.response = s = s.textContent = null;
+		},50);
+	};
+	xhr.send();
+}
+var DoSetup = function()
+{
+	canvas.onclick = function()
+	{
+		if (canvas.disabled) return;
+		canvas.disabled = true;
+		canvas.scrollIntoView();
+		ctx.pCnt = 0;
+		DoLoad();
+	};
+	ctx.fillStyle = '#888';
+	ctx.fillRect(canvas.width/2-254, canvas.height/2-104, 508, 208);
+	ctx.fillStyle = '#333';
+	ctx.fillRect(canvas.width/2-250, canvas.height/2-100, 500, 200);
+	ctx.fillStyle = '#888';
+	ctx.fillText(TXT.PLAYBTN, canvas.width/2, canvas.height/2+10);
+};
+canvas.oncontextmenu = function(e) { e.preventDefault() };
+ctx = canvas.getContext('2d');
+ctx.font = '22px JetBrains Mono, monospace';
+ctx.textAlign = 'center';
+DoSetup();
+})()</script>
+
+
+</html>
+</body>
