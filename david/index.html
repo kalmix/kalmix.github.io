@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      @font-face {
+        font-family: 'Romeo';
+        src: url(rome-magito.otf);
+      }
+
+      @keyframes slideOut {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-100%);
+  }
+}
+
+#loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 1;
+  pointer-events: none;
+}
+#loader .loader-slide {
+  width: 100%;
+  height: 100%;
+  background-color: #020202;
+}
+#loader .loader-slide.open {
+  animation-name: slideOut;
+  animation-fill-mode: forwards;
+  animation-duration: 1s;
+  animation-delay: 1s;
+}
+      body {
+        margin: 0;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #020202; /* Optional background color */
+        /* position: relative; */
+      }
+      h1 {
+        font-size: 15rem; /* Adjust the font size as needed */
+        text-align: center;
+        position: absolute;
+        font-family: 'Romeo', serif;
+        pointer-events: none;
+        font-weight: 100;
+        line-height: 80%;
+        color: white;
+        opacity: 0.3;
+        z-index: 0;
+        top: 35%; /* Center vertically */
+        left: 50%; /* Center horizontally */
+        transform: translate(-50%, -50%); /* Center the text within its container */
+      }
+      
+     
+      html, body {
+        height: 100%;
+      }
+      canvas {
+        display: block;
+      }
+    </style>
+  </head>
+  <div id="loader">
+    
+    <div class="loader-slide"></div>
+</div>
+  <body>
+    <canvas id="canvas3d"></canvas>
+    <div class="line"><h1>QUID REX ES?</h1></div>
+    
+    <div class="line"></div>
+    <a class="logo" href="https://spline.design"></a>
+    <script type="module">
+      import { Application } from './runtime.js';
+      const canvas = document.getElementById('canvas3d');
+      const app = new Application(canvas);
+      app.load('./scene.splinecode');
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.2/gsap.min.js"></script>
+    <script>
+      const tl = gsap.timeline();
+
+tl.from(".line h1", {
+  duration: 4, // Start with duration 0 (initial state)
+  opacity: 0,
+  y: 100,
+  ease: "power4.out",
+  delay: 1,
+  skewY: 5,
+  stagger: {
+    amount: 4
+  }
+});
+
+tl.to(".line h1", {
+  duration: 1.8, // Transition over 1.8 seconds
+  opacity: 0.0,
+   // Change opacity to 1
+  y: 0, // Return to original y position
+  ease: "power4.out",
+  skewY: 0, // Return to original skew
+  stagger: {
+    amount: 3
+  }
+});
+    </script>
+
+    <script>
+window.addEventListener('load', function() {
+    setTimeout(function() {
+        var loaderSlide = document.querySelector('.loader-slide');
+        if (loaderSlide) {
+            loaderSlide.classList.add('open');
+        }
+    }, 1000); // 1000 milliseconds (1 second)
+});
+
+
+    </script>
+  </body>
+</html>
