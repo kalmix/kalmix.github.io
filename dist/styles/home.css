@@ -1,0 +1,71 @@
+.welcome-section {
+    background-image: url("https://ucarecdn.com/13d64a2d-e047-4b27-8ef8-17092e31da5d/-/preview/1000x395/");
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    height: 80vh; 
+    width: 100%; 
+    max-height: 800px;
+    max-width: 100%; 
+    position: relative;
+}
+
+ .welcome-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.60);
+    z-index: 1; 
+} 
+
+.welcome-section * {
+    position: relative;
+    z-index: 2; 
+}
+
+
+.banner-section {
+    background-image: url("https://ucarecdn.com/8b268083-129f-4ea9-b608-ba035c12e040/-/preview/1000x616/");
+    background-size: cover; /* Ajusta el tamaño de la imagen para cubrir toda el área */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    height: 340px; /* Define la altura de la sección como el 30% de la pantalla */
+    width: 100vw;
+    max-height: 500px;
+    max-width: 2000px; /* Define el ancho de la sección como el ancho total de la pantalla */
+    position: relative;
+}
+
+.banner2-section{
+    background-image: url("https://ucarecdn.com/3c6895a9-ad48-4ad9-a93c-7d9d7dc049b4/image3.webp");
+    background-size: cover; /* Ajusta el tamaño de la imagen para cubrir toda el área */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    min-height: 300px; /* Define la altura de la sección como el 30% de la pantalla */
+    width: 100vw;
+                        
+}
+
+.banner-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.60); /* Color superpuesto (negro) con transparencia */
+    z-index: 1; /* Coloca la capa superpuesta detrás del contenido */
+}
+
+
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Oculta la barra de desplazamiento para IE, Edge y Firefox */
+  .hide-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
