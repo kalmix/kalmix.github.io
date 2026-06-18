@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Windows XP</title>
+    <!-- XP.css -->
+    <link rel="stylesheet" href="https://unpkg.com/xp.css" />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,700;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Desktop -->
+    <div id="desktop">
+      <!-- Iconos -->
+      <div class="desktop-icon" id="icon-wordpad">
+        <img
+          src="assets/icons/png/Notepad.png"
+          alt="Notepad Icon"
+          class="icon-img"
+        />
+        <span class="icon-label">Notepad</span>
+      </div>
+
+      <div class="desktop-icon" id="icon-wmp">
+        <img
+          src="assets/icons/png/Windows Media Player 10.png"
+          alt="Media Player Icon"
+          class="icon-img"
+        />
+        <span class="icon-label">Windows Media Player</span>
+      </div>
+
+      <div class="desktop-icon" id="icon-paint">
+        <img
+          src="assets/icons/png/Paint.png"
+          alt="Paint Icon"
+          class="icon-img"
+        />
+        <span class="icon-label">canvas.exe</span>
+      </div>
+
+      <!-- Notepad -->
+      <div
+        class="window draggable active-window"
+        id="win-wordpad"
+        style="width: 600px; height: 420px; left: 50px; top: 30px; z-index: 10"
+      >
+        <div class="title-bar">
+          <div class="title-bar-text">
+            <img
+              src="assets/icons/png/Notepad.png"
+              alt=""
+              class="win-title-icon"
+            />
+            Demo.txt - Notepad
+          </div>
+          <div class="title-bar-controls">
+            <button aria-label="Minimize" class="btn-minimize"></button>
+            <button aria-label="Maximize" class="btn-maximize"></button>
+            <button aria-label="Close" class="btn-close"></button>
+          </div>
+        </div>
+        <div
+          class="window-body"
+          style="
+            padding: 0 !important;
+            margin: 0 !important;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            min-height: 0;
+          "
+        >
+          <div class="notepad-menu">
+            <div class="menu-item">File</div>
+            <div class="menu-item">Edit</div>
+            <div class="menu-item active">Format</div>
+            <div class="menu-item">View</div>
+            <div class="menu-item">Help</div>
+          </div>
+          <div class="notepad-editor-container">
+            <div
+              class="notepad-editor"
+              contenteditable="true"
+              spellcheck="false"
+            >
+              <h1>Práctica HTML + Canvas + JS</h1>
+              <h3>Asignatura: Computación Gráfica</h3>
+              <p>
+                Esta página web interactiva recrea el entorno del sistema
+                operativo <strong>Windows XP</strong> utilizando la hoja de
+                estilos <em>XP.css</em>, integrando los requisitos académicos en
+                forma de programas de escritorio simulados.
+              </p>
+              <hr />
+              <blockquote>
+                "Talk is cheap. Show me the code."<br /><small
+                  >— Linus Torvalds</small
+                >
+              </blockquote>
+              <p>
+                A continuación se presenta una muestra de fórmulas científicas
+                usando subíndices y superíndices:
+              </p>
+              <p>
+                Agua destilada: H<sub>2</sub>O<br />Teorema de Pitágoras: a<sup
+                  >2</sup
+                >
+                + b<sup>2</sup> = c<sup>2</sup>
+              </p>
+              <p>
+                El código empleado para inicializar el contexto de dibujo de
+                Canvas es el siguiente:
+              </p>
+              <pre><code>const canvas = document.getElementById('myCanvas');
+const ctx = canvas.getContext('2d');</code></pre>
+              <p>
+                La <mark>etiqueta mark</mark> permite resaltar términos clave.
+                Adicionalmente, podemos <u>subrayar</u> información relevante.
+              </p>
+
+              <p class="notepad-footer">
+                <small>Estudiante: Jasiel | Fecha: Junio 2026</small>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Media Player -->
+      <div
+        class="window draggable"
+        id="win-wmp"
+        style="width: 500px; left: 150px; top: 120px; z-index: 5"
+      >
+        <div class="title-bar">
+          <div class="title-bar-text">
+            <img
+              src="assets/icons/png/Windows Media Player 10.png"
+              alt=""
+              class="win-title-icon"
+            />
+            Windows Media Player
+          </div>
+          <div class="title-bar-controls">
+            <button aria-label="Minimize" class="btn-minimize"></button>
+            <button aria-label="Maximize" class="btn-maximize"></button>
+            <button aria-label="Close" class="btn-close"></button>
+          </div>
+        </div>
+        <div class="window-body">
+          <section class="tabs" style="height: 100%">
+            <menu role="tablist" aria-label="Media Player Tabs">
+              <button
+                role="tab"
+                aria-selected="true"
+                id="tab-video-btn"
+                onclick="switchWmpTab('video')"
+              >
+                Reproductor de Video
+              </button>
+              <button
+                role="tab"
+                id="tab-audio-btn"
+                onclick="switchWmpTab('audio')"
+              >
+                Reproductor de Audio
+              </button>
+            </menu>
+
+            <!-- Video -->
+            <article role="tabpanel" id="wmp-tab-video">
+              <div class="wmp-container">
+                <video id="video-player" controls preload="auto">
+                  <source src="assets/video/sample.mp4" type="video/mp4" />
+                  Tu navegador no soporta el formato de video.
+                </video>
+              </div>
+            </article>
+
+            <!-- Audio -->
+            <article role="tabpanel" id="wmp-tab-audio" style="display: none">
+              <div class="wmp-container audio-container-layout">
+                <div class="audio-visualization">
+                  <img
+                    src="assets/icons/png/Audio CD.png"
+                    alt="CD Rotating"
+                    id="wmp-disc"
+                    class="rotating-disc paused"
+                  />
+                </div>
+                <audio id="audio-player" controls preload="auto">
+                  <source src="assets/audio/sample.mp3" type="audio/mpeg" />
+                  Tu navegador no soporta el elemento de audio.
+                </audio>
+              </div>
+            </article>
+          </section>
+        </div>
+        <div class="status-bar">
+          <p class="status-bar-field" id="wmp-status">Listo</p>
+          <p class="status-bar-field">100% Vol</p>
+        </div>
+      </div>
+
+      <!-- Paint Screensaver -->
+      <div
+        class="window draggable"
+        id="win-paint"
+        style="width: 580px; left: 220px; top: 80px; z-index: 5"
+      >
+        <div class="title-bar">
+          <div class="title-bar-text">
+            <img
+              src="assets/icons/png/Paint.png"
+              alt=""
+              class="win-title-icon"
+            />
+            canvas.exe
+          </div>
+          <div class="title-bar-controls">
+            <button aria-label="Minimize" class="btn-minimize"></button>
+            <button aria-label="Maximize" class="btn-maximize"></button>
+            <button aria-label="Close" class="btn-close"></button>
+          </div>
+        </div>
+        <div class="window-body">
+          <div class="paint-layout">
+            <!-- Toolbox -->
+            <div class="paint-toolbox">
+              <button
+                class="toolbox-btn active"
+                id="btn-draw-dvd"
+                title="Logo Bouncing"
+              >
+                <img src="assets/icons/png/Minesweeper.png" alt="XP" />
+              </button>
+              <button
+                class="toolbox-btn"
+                id="btn-draw-particles"
+                title="Geometric Shapes"
+              >
+                <img
+                  src="assets/icons/png/Display Properties.png"
+                  alt="Shapes"
+                />
+              </button>
+              <div class="tool-spacer"></div>
+            </div>
+
+            <!-- Canvas -->
+            <div class="paint-canvas-area">
+              <canvas id="paintCanvas" width="450" height="300"></canvas>
+
+              <!-- Config -->
+              <div class="paint-bottom-panel">
+                <fieldset style="margin-bottom: 5px">
+                  <legend>Controles</legend>
+                  <div class="field-row">
+                    <label for="speed-range">Velocidad del Logo:</label>
+                    <label for="speed-range">Mín</label>
+                    <input
+                      type="range"
+                      id="speed-range"
+                      min="1"
+                      max="10"
+                      value="4"
+                    />
+                    <label for="speed-range">Máx</label>
+                  </div>
+                  <div class="field-row" style="margin-top: 5px">
+                    <input type="checkbox" id="checkbox-trail" checked />
+                    <label for="checkbox-trail">Habilitar Estela</label>
+                  </div>
+                </fieldset>
+
+                <div class="field-row" style="justify-content: space-between">
+                  <div>
+                    <button id="btn-anim-toggle">Pausar Animación</button>
+                    <button id="btn-reset-pos">Reiniciar Posiciones</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="status-bar">
+          <p class="status-bar-field">Listo</p>
+          <p class="status-bar-field">450 x 300 px</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Taskbar -->
+    <div id="taskbar">
+      <!-- Start Button -->
+      <button id="start-button">
+        <span class="start-text">start</span>
+      </button>
+
+      <!-- Task List -->
+      <div id="open-tasks">
+        <button
+          class="task-btn active"
+          id="task-win-wordpad"
+          onclick="toggleWindow('win-wordpad')"
+        >
+          <img src="assets/icons/png/Notepad.png" alt="" />
+          <span>Demo.txt - Notepad</span>
+        </button>
+        <button
+          class="task-btn"
+          id="task-win-wmp"
+          onclick="toggleWindow('win-wmp')"
+        >
+          <img src="assets/icons/png/Windows Media Player 10.png" alt="" />
+          <span>Windows Media Player</span>
+        </button>
+        <button
+          class="task-btn"
+          id="task-win-paint"
+          onclick="toggleWindow('win-paint')"
+        >
+          <img src="assets/icons/png/Paint.png" alt="" />
+          <span>canvas.exe</span>
+        </button>
+      </div>
+
+      <!-- Tray  -->
+      <div id="system-tray">
+        <img src="assets/icons/png/Volume.png" alt="Vol" class="tray-icon" />
+        <img
+          src="assets/icons/png/Network Connection.png"
+          alt="Net"
+          class="tray-icon"
+        />
+        <span id="clock">12:00 PM</span>
+      </div>
+    </div>
+
+    <!-- JS -->
+    <script src="script.js"></script>
+  </body>
+</html>
