@@ -1,3 +1,22 @@
+const html = document.documentElement;
+let darkMode = false;
+html.classList.remove('dark');
+
+async function initThemeToggle() {
+  await customElements.whenDefined('md-switch');
+  const sw = document.getElementById('theme_switch');
+  if (!sw) return;
+  await sw.updateComplete;
+  sw.selected = darkMode;
+  sw.addEventListener('change', () => {
+    darkMode = sw.selected;
+    html.classList.toggle('dark', darkMode);
+    localStorage.setItem('tema', darkMode ? 'dark' : 'light');
+  });
+}
+
+initThemeToggle();
+
 const colores = {
   p: '26, 115, 232',    // azul
   s: '74, 85, 104',     // gris
@@ -211,6 +230,12 @@ function iniciar() {
   dibujarUniones();
   bucle();
   setTimeout(cambiarColor, 2500);
+  // Dismiss skeleton loaders after first paint
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      document.querySelectorAll('.skeleton-loader').forEach(s => s.classList.add('loaded'));
+    });
+  });
 }
 
 window.onload = () => {
